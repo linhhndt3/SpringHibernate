@@ -3,6 +3,8 @@ package com.websystique.springmvc.model;
 import java.util.HashSet;
 import java.util.Set;
  
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,13 +16,15 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
  
+
 import org.hibernate.validator.constraints.NotEmpty;
  
 @Entity
 @Table(name="APP_USER")
 public class User {
  
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Id 
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
  
     @NotEmpty
